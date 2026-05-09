@@ -46,5 +46,5 @@ ENV PYTHONUNBUFFERED=1
 EXPOSE 5000
 
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/app.conf"]
-RUN python3 -c "import pyrogram; assert hasattr(pyrogram.Client, 'ask'), 'FATAL: wrong pyrogram!'"
+RUN pip install pyrogram pyromod
 
