@@ -17,6 +17,8 @@ WORKDIR /app
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt && \
+    pip install --no-cache-dir --force-reinstall pyrofork==2.2.11 tgcrypto==1.2.5
 
 RUN curl -L "https://www.bok.net/Bento4/binaries/Bento4-SDK-1-6-0-641.x86_64-unknown-linux.zip" \
         -o /tmp/bento4.zip && \
@@ -40,3 +42,4 @@ ENV PYTHONUNBUFFERED=1
 EXPOSE 5000
 
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/app.conf"]
+
