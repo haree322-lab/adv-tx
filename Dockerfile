@@ -16,6 +16,8 @@ RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
 WORKDIR /app
 
 COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt          # pyrofork installs here
+RUN pip install --no-cache-dir --no-deps pyromod==1.5.0     # no deps = no vanilla pyrogram
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt && \
     pip install --no-cache-dir --force-reinstall pyrofork==2.2.11 tgcrypto==1.2.5
