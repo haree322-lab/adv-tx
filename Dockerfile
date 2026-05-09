@@ -29,7 +29,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --no-cache-dir --force-reinstall pyrofork==2.2.11 tgcrypto==1.2.5 pyromod==1.5.0
 
 # 5. Sanity Check (Ensures the build stops if the wrong pyrogram installed)
-RUN python3 -c "import pyrogram, pyromod; assert hasattr(pyrogram.Client, 'ask'), 'FATAL: pyromod not patching!'"
+RUN python3 -c "import pyrogram; from pyromod import listen; assert hasattr(pyrogram.Client, 'ask'), 'FATAL: pyromod not patching!'"
 
 # 6. Install Bento4 / mp4decrypt
 RUN curl -L "https://www.bok.net/Bento4/binaries/Bento4-SDK-1-6-0-641.x86_64-unknown-linux.zip" \
