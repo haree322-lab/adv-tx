@@ -11,3 +11,5 @@ echo "[start.sh] Web dashboard started (PID $WEBAPP_PID)"
 # Start the Telegram bot in the foreground (keeps container alive)
 echo "[start.sh] Starting Telegram bot..."
 python3 -u main.py
+python3 -u app.py &   # web dashboard in background
+python3 -u main.py    # bot in foreground (keeps container alive)
