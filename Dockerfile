@@ -16,7 +16,9 @@ RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
 WORKDIR /app
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt          # pyrofork installs here
+RUN pip install "pyrogram<2.0" pyromod
+# OR
+RUN pip install hydrogram
 RUN pip install --no-cache-dir --no-deps pyromod==1.5.0     # no deps = no vanilla pyrogram
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt && \
