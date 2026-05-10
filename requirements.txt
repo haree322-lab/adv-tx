@@ -1,6 +1,7 @@
 # Telegram
 pyrofork==2.2.11
 tgcrypto==1.2.5
+pyromod
 pysocks==1.7.1
 
 # HTTP & scraping
