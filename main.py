@@ -1,4 +1,24 @@
-# 🔧 Standard Library
+from flask import Flask
+from threading import Thread
+import os
+
+app = Flask(__name__)
+
+@app.route('/')
+def health_check():
+    return "Bot is running!"
+
+def run_server():
+    # Koyeb passes the port as an environment variable, defaulting to 8000
+    port = int(os.environ.get("PORT", 8000))
+    # You MUST bind to 0.0.0.0 so external health checks can reach it
+    app.run(host="0.0.0.0", port=port)
+
+# Start the dummy web server in a background thread
+server_thread = Thread(target=run_server)
+server_thread.start()
+
+# --- Your existing bot code goes down here ---# 🔧 Standard Library
 import os
 import re
 import sys
