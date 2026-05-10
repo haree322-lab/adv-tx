@@ -21,7 +21,7 @@ _load_env_file()
 API_ID = int(os.environ.get("API_ID", "27473563"))
 API_HASH = os.environ.get("API_HASH", "bc2ea0765ac96bb474891b0243f44390")
 BOT_TOKEN = os.environ.get(
-    "BOT_TOKEN", "7086145092:AAFcQBULokd-es52qzKFkoaY5cuXt5zBwew"
+    "BOT_TOKEN", "8374730758:AAEQlvEWWQHdj64c4S_qSRoS6MKaj1tkvao"
 )
 
 CREDIT = os.environ.get("CREDIT", "𝕞𝕚𝕘𝕙𝕥𝕪 𝕒𝕥𝕠𝕞")
